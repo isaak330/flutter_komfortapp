@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_komfortapp/appBar.dart';
 import 'package:flutter_komfortapp/authorise/authorise_page.dart';
+import 'package:flutter_komfortapp/authorise/recovery_page1.dart';
 import 'package:flutter_komfortapp/history.dart';
 import 'package:flutter_komfortapp/informationBar.dart';
 //import 'package:flutter_komfortapp/navBar.dart';
@@ -35,9 +36,10 @@ class MyApp extends StatelessWidget {
           ],
         ),
       ),
-      initialRoute: '/authorisePage',
+      initialRoute: '/recovery_page',
       routes: {
         '/authorisePage': (context) => authorisePage(),
+        '/recovery_page': (context) => recoveryPage1(),
         // '/home': ,
       },
     );
