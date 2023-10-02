@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
           ],
         ),
       ),
-      initialRoute: '/recovery_page',
+      initialRoute: '/authorisePage',
       routes: {
         '/authorisePage': (context) => authorisePage(),
         '/recovery_page': (context) => recoveryPage1(),

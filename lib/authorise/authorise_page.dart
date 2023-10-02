@@ -1,6 +1,11 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:flutter_komfortapp/repos.dart/authoriseRepo.dart';
 
 class authorisePage extends StatelessWidget {
+  TextEditingController _login = TextEditingController();
+  TextEditingController _password = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,6 +17,7 @@ class authorisePage extends StatelessWidget {
               child: Image(image: AssetImage('assets/logo1.png')),
             ),
             TextFormField(
+              controller: _login,
               decoration: InputDecoration(
                   labelText: 'Логин',
                   enabledBorder: OutlineInputBorder(
@@ -27,6 +33,7 @@ class authorisePage extends StatelessWidget {
               height: 10,
             ),
             TextFormField(
+              controller: _password,
               decoration: InputDecoration(
                   labelText: 'Пароль',
                   enabledBorder: OutlineInputBorder(
@@ -42,7 +49,17 @@ class authorisePage extends StatelessWidget {
               height: 10,
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () async {
+                _login.text;
+                bool authIsSuccess =
+                    await authoriseRepo.getInfo(_login.text, _password.text);
+                if (authIsSuccess) {
+                } else {
+                  setState(() {
+                    isError = true;
+                  });
+                }
+              },
               style: ElevatedButton.styleFrom(
                   padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
                   shape: RoundedRectangleBorder(
