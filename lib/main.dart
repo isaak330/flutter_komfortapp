@@ -8,7 +8,7 @@ import 'package:flutter_komfortapp/informationBar.dart';
 import 'package:flutter_komfortapp/payButtons/payButtons.dart';
 import 'package:http/http.dart' as http;
 
-void main() => runApp(MyApp());
+void main() => runApp(authorisePage());
 
 class MyApp extends StatelessWidget {
   @override
@@ -36,12 +36,6 @@ class MyApp extends StatelessWidget {
           ],
         ),
       ),
-      initialRoute: '/authorisePage',
-      routes: {
-        '/authorisePage': (context) => authorisePage(),
-        '/recovery_page': (context) => recoveryPage1(),
-        // '/home': ,
-      },
     );
   }
 }

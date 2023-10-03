@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:flutter_komfortapp/main.dart';
 import 'package:flutter_komfortapp/repos.dart/authoriseRepo.dart';
 
 class authorisePage extends StatelessWidget {
@@ -54,10 +55,13 @@ class authorisePage extends StatelessWidget {
                 bool authIsSuccess =
                     await authoriseRepo.getInfo(_login.text, _password.text);
                 if (authIsSuccess) {
+                  Route route =
+                      MaterialPageRoute(builder: (context) => MyApp());
+                  Navigator.push(context, route);
                 } else {
-                  setState(() {
-                    isError = true;
-                  });
+                  // setState(() {
+                  //   isError = true;
+                  // });
                 }
               },
               style: ElevatedButton.styleFrom(
