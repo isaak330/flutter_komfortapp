@@ -24,7 +24,10 @@ class authorisePage extends StatelessWidget {
                 child: Column(children: [
                   Text(
                     'Добро пожаловать!',
-                    style: TextStyle(fontWeight: FontWeight.w700, fontSize: 24),
+                    style: TextStyle(
+                        fontWeight: FontWeight.w700,
+                        fontSize: 24,
+                        letterSpacing: -1),
                   ),
                   SizedBox(
                     height: 8,
@@ -49,13 +52,12 @@ class authorisePage extends StatelessWidget {
                   SizedBox(
                     height: 5,
                   ),
-                  Text(
-                    'интернета',
-                    style: TextStyle(
+                  Text('интернета',
+                      style: TextStyle(
                         fontWeight: FontWeight.w400,
                         fontSize: 14,
-                        color: Color(0xFF5D5F61)),
-                  )
+                        color: Colors.grey,
+                      ))
                 ]),
               ),
               SizedBox(height: 24),
@@ -67,12 +69,12 @@ class authorisePage extends StatelessWidget {
                       labelText: 'Логин',
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(12)),
-                          borderSide: BorderSide(
-                              color: const Color.fromARGB(108, 0, 0, 0))),
+                          borderSide:
+                              BorderSide(color: const Color(0xFFE1E3E6))),
                       focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(12)),
-                          borderSide:
-                              BorderSide(color: Color.fromARGB(108, 0, 0, 0)))),
+                          borderSide: BorderSide(
+                              color: Color.fromARGB(255, 108, 99, 255)))),
                 ),
               ),
               SizedBox(
@@ -86,12 +88,12 @@ class authorisePage extends StatelessWidget {
                       labelText: 'Пароль',
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(12)),
-                          borderSide: BorderSide(
-                              color: const Color.fromARGB(108, 0, 0, 0))),
+                          borderSide:
+                              BorderSide(color: const Color(0xFFE1E3E6))),
                       focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(12)),
-                          borderSide:
-                              BorderSide(color: Color.fromARGB(108, 0, 0, 0)))),
+                          borderSide: BorderSide(
+                              color: Color.fromARGB(255, 108, 99, 255)))),
                 ),
               ),
               SizedBox(
