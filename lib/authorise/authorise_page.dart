@@ -1,17 +1,22 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_komfortapp/authorise/isLoggedIn.dart';
-import 'package:flutter_komfortapp/main.dart';
+//import 'package:flutter_komfortapp/main.dart';
 import 'package:flutter_komfortapp/repos.dart/authoriseRepo.dart';
 import 'package:flutter_komfortapp/homeScreen.dart';
 
-class authorisePage extends StatelessWidget {
+class authorisePage extends StatefulWidget {
+  @override
+  _authorisePage createState() => _authorisePage();
+}
+
+class _authorisePage extends State<authorisePage> {
   TextEditingController _login = TextEditingController();
   TextEditingController _password = TextEditingController();
+  bool _hidePass = true;
+  //bool isAuth = addBoolToSF(false);
 
   @override
   Widget build(BuildContext context) {
-    addBoolToSF(false);
     return Scaffold(
       body: Form(
         child: Container(
@@ -73,8 +78,7 @@ class authorisePage extends StatelessWidget {
                               BorderSide(color: const Color(0xFFE1E3E6))),
                       focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(12)),
-                          borderSide: BorderSide(
-                              color: Color.fromARGB(255, 108, 99, 255)))),
+                          borderSide: BorderSide(color: Color(0xFF0085FF)))),
                 ),
               ),
               SizedBox(
@@ -83,8 +87,19 @@ class authorisePage extends StatelessWidget {
               Container(
                 height: 54,
                 child: TextFormField(
+                  obscureText: _hidePass,
                   controller: _password,
                   decoration: InputDecoration(
+                      suffixIcon: IconButton(
+                        icon: Icon(_hidePass
+                            ? Icons.visibility
+                            : Icons.visibility_off),
+                        onPressed: () {
+                          setState(() {
+                            _hidePass = !_hidePass;
+                          });
+                        },
+                      ),
                       labelText: 'Пароль',
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(12)),
@@ -92,8 +107,7 @@ class authorisePage extends StatelessWidget {
                               BorderSide(color: const Color(0xFFE1E3E6))),
                       focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(12)),
-                          borderSide: BorderSide(
-                              color: Color.fromARGB(255, 108, 99, 255)))),
+                          borderSide: BorderSide(color: Color(0xFF0085FF)))),
                 ),
               ),
               SizedBox(
@@ -106,7 +120,8 @@ class authorisePage extends StatelessWidget {
                     bool authIsSuccess = await authoriseRepo.getInfo(
                         _login.text, _password.text);
                     if (authIsSuccess) {
-                      //addBoolToSF(true);
+                      await addBoolToSF(true);
+                      setState(() {});
                       Route route =
                           MaterialPageRoute(builder: (context) => HomeScreen());
                       Navigator.pushAndRemoveUntil(

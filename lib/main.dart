@@ -10,8 +10,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: recoveryPage1(),
-      // getBoolValuesSF() == true ? HomeScreen() : authorisePage(),
-    );
+        home: // authorisePage(),
+            FutureBuilder<bool>(
+                future: getBoolValuesSF(),
+                builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
+                  if (snapshot.data == true) {
+                    return HomeScreen();
+                  } else {
+                    return authorisePage();
+                  }
+                }));
   }
 }
