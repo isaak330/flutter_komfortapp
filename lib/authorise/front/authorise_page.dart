@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_komfortapp/authorise/isLoggedIn.dart';
-//import 'package:flutter_komfortapp/main.dart';
-import 'package:flutter_komfortapp/repos.dart/authoriseRepo.dart';
+import 'package:flutter_komfortapp/authorise/back/isLoggedIn.dart';
+import 'package:flutter_komfortapp/authorise/front/recovery_page1.dart';
+import 'package:flutter_komfortapp/authorise/back/authoriseRepo.dart';
+import 'package:flutter_komfortapp/authorise/front/topText.dart';
 import 'package:flutter_komfortapp/homeScreen.dart';
 
 class authorisePage extends StatefulWidget {
@@ -24,47 +25,7 @@ class _authorisePage extends State<authorisePage> {
           child: Column(
             //padding: EdgeInsets.fromLTRB(10, 200, 10, 0),
             children: [
-              Container(
-                padding: EdgeInsets.fromLTRB(0, 9, 0, 9),
-                child: Column(children: [
-                  Text(
-                    'Добро пожаловать!',
-                    style: TextStyle(
-                        fontWeight: FontWeight.w700,
-                        fontSize: 24,
-                        letterSpacing: -1),
-                  ),
-                  SizedBox(
-                    height: 8,
-                  ),
-                  Text(
-                    'Войдите, чтобы получить доступ к различным',
-                    style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 14,
-                        color: Color(0xFF5D5F61)),
-                  ),
-                  SizedBox(
-                    height: 5,
-                  ),
-                  Text(
-                    'функциям и сервисам вашего домашнего',
-                    style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 14,
-                        color: Color(0xFF5D5F61)),
-                  ),
-                  SizedBox(
-                    height: 5,
-                  ),
-                  Text('интернета',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 14,
-                        color: Colors.grey,
-                      ))
-                ]),
-              ),
+              topText(),
               SizedBox(height: 24),
               Container(
                 height: 54,
@@ -121,7 +82,6 @@ class _authorisePage extends State<authorisePage> {
                         _login.text, _password.text);
                     if (authIsSuccess) {
                       await addBoolToSF(true);
-                      setState(() {});
                       Route route =
                           MaterialPageRoute(builder: (context) => HomeScreen());
                       Navigator.pushAndRemoveUntil(
@@ -149,7 +109,11 @@ class _authorisePage extends State<authorisePage> {
                 height: 8,
               ),
               TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Route route = MaterialPageRoute(
+                        builder: (context) => recoveryPage1());
+                    Navigator.push(context, route);
+                  },
                   child: Text(
                     'Не помню логин или пароль',
                     style: TextStyle(

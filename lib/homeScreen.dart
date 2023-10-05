@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_komfortapp/adButtons/adButtons.dart';
 import 'package:flutter_komfortapp/appBar.dart';
 import 'package:flutter_komfortapp/history.dart';
 import 'package:flutter_komfortapp/informationBar.dart';
@@ -25,8 +26,13 @@ class HomeScreen extends StatelessWidget {
                   historyWidget(),
                   historyWidget(),
                 ])),
-            informationBar(),
-            payButtons(),
+            SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Column(children: [
+                informationBar(),
+                payButtons(),
+              ]),
+            )
           ],
         ),
       ),

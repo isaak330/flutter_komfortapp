@@ -10,7 +10,6 @@ class authoriseRepo {
     }
     return false;
   }
-  // if (response.statusCode == 200) {
-  //   return true;
-  // }
 }
+
+class idIdent {}
