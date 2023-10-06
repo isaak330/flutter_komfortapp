@@ -23,7 +23,7 @@ Widget informationBar() {
                     style: TextStyle(
                         fontWeight: FontWeight.w400,
                         fontSize: 14,
-                        color: Colors.grey),
+                        color: Color.fromARGB(255, 93, 95, 97)),
                   ),
                   SizedBox(
                     height: 2,
@@ -42,9 +42,9 @@ Widget informationBar() {
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12),
-                    color: Color.fromARGB(255, 0, 132, 255),
+                    color: Color.fromARGB(255, 0, 133, 255),
                   ),
-                  padding: EdgeInsets.all(10),
+                  padding: EdgeInsets.fromLTRB(10, 11, 10, 10),
                   width: 122,
                   height: 40,
                   child: Text(
@@ -71,7 +71,7 @@ Widget informationBar() {
                   style: TextStyle(
                       fontWeight: FontWeight.w400,
                       fontSize: 14,
-                      color: Colors.grey),
+                      color: const Color.fromARGB(255, 93, 95, 97)),
                 ),
                 SizedBox(
                   height: 2,

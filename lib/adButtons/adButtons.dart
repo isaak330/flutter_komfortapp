@@ -27,8 +27,8 @@ class HistoryWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 128, //размер
-      width: 128, //размер
+      height: 134, //размер
+      width: 303, //размер
       margin: const EdgeInsets.all(
           8), //отступы со всех сторон, чтобы не стояли вплотную
       alignment: Alignment.bottomCenter, //выравнивание детей по центру снизу

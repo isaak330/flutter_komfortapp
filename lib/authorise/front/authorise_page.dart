@@ -19,6 +19,7 @@ class _authorisePage extends State<authorisePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 242, 243, 245),
       body: Form(
         child: Container(
           padding: EdgeInsets.fromLTRB(16, 110, 16, 16),
@@ -39,7 +40,8 @@ class _authorisePage extends State<authorisePage> {
                               BorderSide(color: const Color(0xFFE1E3E6))),
                       focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(12)),
-                          borderSide: BorderSide(color: Color(0xFF0085FF)))),
+                          borderSide: BorderSide(
+                              color: Color.fromARGB(255, 0, 133, 255)))),
                 ),
               ),
               SizedBox(
@@ -100,7 +102,7 @@ class _authorisePage extends State<authorisePage> {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12)),
                       fixedSize: Size(50, 55),
-                      backgroundColor: Color(0xFF0085FF)),
+                      backgroundColor: Color.fromARGB(255, 0, 133, 255)),
                   child: Text(
                     'Войти',
                     style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16),
@@ -119,7 +121,7 @@ class _authorisePage extends State<authorisePage> {
                   child: Text(
                     'Не помню логин или пароль',
                     style: TextStyle(
-                        color: Color(0xFF0085FF),
+                        color: Color.fromARGB(255, 0, 133, 255),
                         fontSize: 14,
                         fontWeight: FontWeight.w500),
                   ))

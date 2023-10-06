@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 AppBar appBar() {
   return AppBar(
-    backgroundColor: Color.fromARGB(255, 243, 243, 243),
+    backgroundColor: Color.fromARGB(255, 242, 243, 245),
     elevation: 0,
     title: Column(
       children: [

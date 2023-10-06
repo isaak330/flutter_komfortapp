@@ -15,7 +15,7 @@ Widget payButton() {
           height: 40,
           decoration: BoxDecoration(
             shape: BoxShape.circle, // Устанавливаем форму круга
-            color: Colors.blue, // Цвет круга
+            color: Color.fromARGB(255, 0, 133, 255), // Цвет круга
           ),
           child: Icon(
             Icons.ac_unit,
@@ -34,7 +34,10 @@ Widget payButton() {
             ),
             Text(
               'Всегда на связи!',
-              style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
+              style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w400,
+                  color: Color.fromARGB(255, 93, 95, 97)),
             )
           ],
         )

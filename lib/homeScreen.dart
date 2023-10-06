@@ -12,10 +12,21 @@ class HomeScreen extends StatelessWidget {
       home: Scaffold(
         appBar: appBar(),
         // bottomNavigationBar: navBar(),
-        backgroundColor: Color.fromARGB(255, 243, 243, 243),
+        backgroundColor: Color.fromARGB(255, 242, 243, 245),
         body: SingleChildScrollView(
           child: Column(
-            children: [informationBar(), payButton()],
+            children: [
+              informationBar(),
+              payButton(),
+              Container(
+                alignment: Alignment.centerLeft,
+                margin: EdgeInsets.fromLTRB(16, 8, 16, 16),
+                child: Text(
+                  'Наши предложения',
+                  style: TextStyle(fontSize: 17, fontWeight: FontWeight.w700),
+                ),
+              )
+            ],
           ),
         ),
       ),
