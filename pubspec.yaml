@@ -73,6 +73,7 @@ flutter:
   assets:
     - assets/logo1.png
     - assets/rupor.jpg
+    - assets/iconChat.svg
     
 
   # An image asset can refer to one or more resolution-specific "variants", see

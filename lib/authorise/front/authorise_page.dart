@@ -14,7 +14,7 @@ class _authorisePage extends State<authorisePage> {
   TextEditingController _login = TextEditingController();
   TextEditingController _password = TextEditingController();
   bool _hidePass = true;
-  //bool isAuth = addBoolToSF(false);
+  bool _correctData = true;
 
   @override
   Widget build(BuildContext context) {
@@ -64,8 +64,10 @@ class _authorisePage extends State<authorisePage> {
                       labelText: 'Пароль',
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(12)),
-                          borderSide:
-                              BorderSide(color: const Color(0xFFE1E3E6))),
+                          borderSide: BorderSide(
+                              color: _correctData
+                                  ? Color(0xFFE1E3E6)
+                                  : Colors.red)),
                       focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(12)),
                           borderSide: BorderSide(color: Color(0xFF0085FF)))),
@@ -87,9 +89,9 @@ class _authorisePage extends State<authorisePage> {
                       Navigator.pushAndRemoveUntil(
                           context, route, (route) => false);
                     } else {
-                      // setState(() {
-                      //   isError = true;
-                      // });
+                      setState(() {
+                        _correctData = false;
+                      });
                     }
                   },
                   style: ElevatedButton.styleFrom(

@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: // authorisePage(),
+        home: //authorisePage(),
             FutureBuilder<bool>(
                 future: getBoolValuesSF(),
                 builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {

@@ -7,8 +7,6 @@ addBoolToSF(bool St) async {
 
 Future<bool> getBoolValuesSF() async {
   SharedPreferences prefs = await SharedPreferences.getInstance();
-  //Return bool
   bool? boolValue = prefs.getBool('boolValue');
-  //print(boolValue);
   return boolValue!;
 }

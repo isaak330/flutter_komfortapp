@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_komfortapp/adButtons/adButtons.dart';
 import 'package:flutter_komfortapp/appBar.dart';
 import 'package:flutter_komfortapp/history.dart';
-import 'package:flutter_komfortapp/informationBar.dart';
+import 'package:flutter_komfortapp/infoBar/front/informationBar.dart';
 import 'package:flutter_komfortapp/payButtons/payButtons.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -12,28 +11,11 @@ class HomeScreen extends StatelessWidget {
       home: Scaffold(
         appBar: appBar(),
         // bottomNavigationBar: navBar(),
-        backgroundColor: Color.fromARGB(255, 248, 248, 248),
-        body: Column(
-          children: [
-            SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(children: [
-                  historyWidget(),
-                  historyWidget(),
-                  historyWidget(),
-                  historyWidget(),
-                  historyWidget(),
-                  historyWidget(),
-                  historyWidget(),
-                ])),
-            SingleChildScrollView(
-              scrollDirection: Axis.vertical,
-              child: Column(children: [
-                informationBar(),
-                payButtons(),
-              ]),
-            )
-          ],
+        backgroundColor: Color.fromARGB(255, 243, 243, 243),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [informationBar()],
+          ),
         ),
       ),
     );
