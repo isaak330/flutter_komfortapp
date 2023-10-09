@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_komfortapp/infoBar/back/getInfoBarData.dart';
 
 Widget payButton() {
   return InkWell(
-    onTap: () {},
+    onTap: () {
+      HomePageRepo.getInfoBarData();
+    },
     child: Container(
       height: 72,
       padding: EdgeInsets.all(16),

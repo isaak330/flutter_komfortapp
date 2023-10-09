@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
             FutureBuilder<bool>(
                 future: getBoolValuesSF(),
                 builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
-                  if (snapshot.data == true) {
+                  if (snapshot.data != null) {
                     return HomeScreen();
                   } else {
                     return authorisePage();

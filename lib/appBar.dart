@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_komfortapp/infoBar/back/getInfoBarData.dart';
 
-AppBar appBar() {
+AppBar appBar(String uid, String userName) {
   return AppBar(
     backgroundColor: Color.fromARGB(255, 242, 243, 245),
     elevation: 0,
     title: Column(
       children: [
         Text(
-          '№123456789',
+          uid,
           style: TextStyle(
               color: Colors.black,
               fontWeight: FontWeight.w700,
@@ -15,7 +16,7 @@ AppBar appBar() {
               fontSize: 16),
         ),
         Text(
-          'Иванов Иван Иванович',
+          userName,
           style: TextStyle(
               color: Colors.grey,
               fontWeight: FontWeight.w400,
@@ -60,3 +61,22 @@ AppBar appBar() {
     ],
   );
 }
+
+// class MyBtn extends StatelessWidget {
+//   final Function()? onPressed;
+//   final Widget icon;
+//   const MyBtn({super.key, this.onPressed, required this.icon});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//         width: 40,
+//         height: 40,
+//         decoration: const BoxDecoration(
+//           shape: BoxShape.circle, // Устанавливаем форму круга
+//           color: Color.fromARGB(255, 255, 255, 255), // Цвет круга
+//         ),
+//       child: IconButton(onPressed: onPressed, icon: icon),
+//     );
+//   }
+// }
